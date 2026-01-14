@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Private Message</title>
+
+  <!-- SEO -->
+  <meta name="description" content="A private message page.">
+  <meta name="robots" content="index, follow">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(0,0,0,0.5);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 6px;
+      background: #ff9800;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ffc107;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    img {
+      margin-top: 20px;
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    p {
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- PASSWORD SECTION -->
+  <div id="login">
+    <h2>Enter Access Key</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
+    <p style="font-size: 12px; opacity: 0.8;">
+      This page contains a private message.
+    </p>
+  </div>
+
+  <!-- MESSAGE SECTION -->
+  <div id="content" class="hidden">
+    <h2>My Message</h2>
+
+    <p>
+      This message is written quietly and respectfully.
+      If you are reading this, it means you chose to.
+    </p>
+
+    <p>
+      (Write your full message here. Keep it calm, short, and dignified.)
+    </p>
+
+    <img src="photo.jpg" alt="My Photo">
+  </div>
+
+</div>
+
+<script>
+  function checkPassword() {
+    const correctPassword = "Newfrindeshipforever";
+    const enteredPassword = document.getElementById("password").value;
+
+    if (enteredPassword === correctPassword) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("content").classList.remove("hidden");
+    } else {
+      alert("Incorrect password");
+    }
+  }
+</script>
+
+</body>
+</html>
