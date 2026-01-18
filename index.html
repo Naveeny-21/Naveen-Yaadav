@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8">
 
@@ -72,6 +73,29 @@
       line-height: 1.6;
       margin-top: 15px;
     }
+    /* Video container center */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Default video size (desktop) */
+.video-container video {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Mobile size fix */
+@media (max-width: 768px) {
+  .video-container video {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
   </style>
 </head>
 
@@ -114,10 +138,12 @@ bhali buri Batein sun na"
 chahiye"
 "Ha har pal har lamha Bas tu chahiye tu"
     </p>
-    <video controls width="100%">
-  <source src="video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+    <div class="video-container">
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
     <p>
       Jis trh prathna puri na hone pr ishwar se gussa hojate hai pr ishwar badalte nhi hai 
       uss hi trh pyaar pura na hone prr gussa hote hai ruth te hai badalte nhi hai 
